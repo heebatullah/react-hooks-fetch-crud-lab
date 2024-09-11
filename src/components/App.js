@@ -18,12 +18,15 @@ function App() {
   }
 
   function handleUpdateQuestion(updatedQuestion) {
-    const updatedQuestions = questions.map(question =>
-      question.id === updatedQuestion.id ? updatedQuestion : question
+    setQuestions((prevQuestions) =>
+      prevQuestions.map((question) =>
+        question.id === updatedQuestion.id ? updatedQuestion : question
+      )
     );
-    setQuestions(updatedQuestions);
   }
-
+  
+  
+  
   function handleDeleteQuestion(id) {
     const updatedQuestions = questions.filter(question => question.id !== id);
     setQuestions(updatedQuestions);
